@@ -1,0 +1,391 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:40px;
+
+    background:linear-gradient(-45deg,#4F46E5,#7C3AED,#06B6D4,#3B82F6);
+
+    background-size:400% 400%;
+
+    animation:gradientBG 12s ease infinite;
+
+}
+
+@keyframes gradientBG{
+
+0%{
+background-position:0% 50%;
+}
+
+50%{
+background-position:100% 50%;
+}
+
+100%{
+background-position:0% 50%;
+}
+
+}
+
+.container{
+
+    width:100%;
+
+    max-width:900px;
+
+}
+
+.card{
+
+    background:rgba(255,255,255,.15);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.2);
+
+    border-radius:25px;
+
+    padding:40px;
+
+    box-shadow:0 20px 45px rgba(0,0,0,.25);
+
+    transition:.4s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.header{
+
+    text-align:center;
+
+    margin-bottom:35px;
+
+}
+
+.icon{
+
+    width:80px;
+
+    height:80px;
+
+    border-radius:50%;
+
+    margin:auto;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:42px;
+
+    background:rgba(255,255,255,.2);
+
+    margin-bottom:15px;
+
+}
+
+.header h1{
+
+    color:#fff;
+
+    font-size:34px;
+
+    font-weight:700;
+
+}
+
+.header p{
+
+    color:#f3f3f3;
+
+    margin-top:10px;
+
+    font-size:16px;
+
+}
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:20px;
+
+}
+
+.form-group{
+
+    margin-bottom:22px;
+
+}
+
+label{
+
+    display:block;
+
+    color:white;
+
+    margin-bottom:8px;
+
+    font-weight:500;
+
+}
+
+input,
+select{
+
+    width:100%;
+
+    padding:14px 16px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:12px;
+
+    background:rgba(255,255,255,.95);
+
+    font-size:15px;
+
+    transition:.3s;
+
+}
+
+input:focus,
+select:focus{
+
+    transform:scale(1.02);
+
+    box-shadow:0 0 15px rgba(255,255,255,.6);
+
+}
+/* ===========================
+   BUTTON
+=========================== */
+
+.btn{
+    width:100%;
+    margin-top:10px;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    background:linear-gradient(135deg,#10B981,#059669);
+    color:#fff;
+    font-size:18px;
+    font-weight:600;
+    cursor:pointer;
+    transition:all .3s ease;
+    box-shadow:0 10px 25px rgba(16,185,129,.35);
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 15px 35px rgba(16,185,129,.45);
+}
+
+.btn:active{
+    transform:scale(.98);
+}
+
+
+/* ===========================
+   RESULT CARD
+=========================== */
+
+.result-card{
+
+    margin-top:35px;
+
+    background:rgba(255,255,255,.18);
+
+    backdrop-filter:blur(10px);
+
+    border-radius:18px;
+
+    text-align:center;
+
+    padding:30px;
+
+    border:1px solid rgba(255,255,255,.25);
+
+    animation:fadeIn .6s ease;
+
+}
+
+.result-card h2{
+
+    color:white;
+
+    font-size:24px;
+
+    margin-bottom:20px;
+
+}
+
+.score{
+
+    font-size:65px;
+
+    font-weight:700;
+
+    color:#FFD54F;
+
+    text-shadow:0 0 15px rgba(255,213,79,.5);
+
+}
+
+.result-text{
+
+    margin-top:10px;
+
+    color:#f5f5f5;
+
+    font-size:16px;
+
+}
+
+
+/* ===========================
+   ANIMATION
+=========================== */
+
+@keyframes fadeIn{
+
+from{
+
+opacity:0;
+
+transform:translateY(20px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:768px){
+
+body{
+
+padding:20px;
+
+}
+
+.card{
+
+padding:25px;
+
+}
+
+.grid{
+
+grid-template-columns:1fr;
+
+gap:0;
+
+}
+
+.header h1{
+
+font-size:28px;
+
+}
+
+.header p{
+
+font-size:14px;
+
+}
+
+.icon{
+
+width:65px;
+
+height:65px;
+
+font-size:32px;
+
+}
+
+.score{
+
+font-size:48px;
+
+}
+
+.btn{
+
+font-size:16px;
+
+padding:14px;
+
+}
+
+}
+
+
+/* ===========================
+   SCROLLBAR
+=========================== */
+
+::-webkit-scrollbar{
+
+width:8px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#ddd;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:#6366F1;
+
+border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+background:#4338CA;
+
+}
