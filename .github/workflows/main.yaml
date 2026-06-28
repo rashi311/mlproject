@@ -84,6 +84,11 @@ jobs:
       - name: Pull latest images
         run: |
           docker pull ${{secrets.AWS_ECR_LOGIN_URI }}/${{ secrets.ECR_REPOSITORY_NAME }}:latest
+      
+      - name: Stop and remove old container
+        run: |
+          docker stop mltest || true
+          docker rm mltest || true
 
       - name: Run Docker Imange to serve users
         run: |
@@ -97,4 +102,4 @@ jobs:
           ${{ secrets.AWS_ECR_LOGIN_URI }}/${{ secrets.ECR_REPOSITORY_NAME }}:latest
       - name : Clean previous images and containers
         run: |
-          docker system prune -f     
+          docker image prune -f     
